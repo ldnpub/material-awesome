@@ -127,7 +127,7 @@ local globalKeys =
   -- Standard program
   awful.key(
     {modkey},
-    'x',
+    't',
     function()
       awful.spawn(apps.default.terminal)
     end,

@@ -15,12 +15,12 @@ return {
     screenshot = '~/.config/awesome/configuration/utils/screenshot -m',
     region_screenshot = '~/.config/awesome/configuration/utils/screenshot -r',
     delayed_screenshot = 'sleep 10 ; ~/.config/awesome/configuration/utils/screenshot -r',
-    
+
     -- Editing these also edits the default program
     -- associated with each tag/workspace
-    browser = 'vivaldi-stable',
-    editor = 'gedit', -- gui text editor
-    social = 'discord',
+    browser = 'firefox',
+    editor = 'gvim', -- gui text editor
+    social = 'telegram',
     game = rofi_command,
     files = 'nautilus -w',
     music = rofi_command
@@ -28,7 +28,7 @@ return {
   -- List of apps to start once on start-up
   run_on_start_up = {
     'compton --config ' .. filesystem.get_configuration_dir() .. '/configuration/compton.conf',
-    'nm-applet --indicator', -- wifi
+    'nm-applet', -- wifi
     'pa-applet', -- shows an audiocontrol applet in systray when installed.
     --'blueberry-tray', -- Bluetooth tray icon
     --'xfce4-power-manager', -- Power manager
@@ -39,9 +39,9 @@ return {
     --KDE '/usr/lib/x86_64-linux-gnu/libexec/polkit-kde-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)', -- credential manager
     -- MATE'/usr/lib/mate-polkit/polkit-mate-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)', -- credential manager
      'flameshot',
-     'synology-drive -minimized',
-     'steam -silent',
-     'discord',
+    -- 'synology-drive -minimized',
+    -- 'steam -silent',
+    -- 'discord',
     -- Add applications that need to be killed between reloads
     -- to avoid multipled instances, inside the awspawn script
     '~/.config/awesome/configuration/awspawn' -- Spawn "dirty" apps that can linger between sessions

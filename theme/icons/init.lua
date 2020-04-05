@@ -1,28 +1,12 @@
-local dir = os.getenv('HOME') .. '/.config/awesome/theme/icons'
+local gtable = require('gears.table')
+local default_theme = require('theme.default-theme')
+-- PICK THEME HERE
+local theme = require('theme.PapyElGringo-theme')
 
-return {
-  --tags
-  chrome = dir .. '/google-chrome.svg',
-  code = dir .. '/code-braces.svg',
-  social = dir .. '/forum.svg',
-  folder = dir .. '/folder.svg',
-  music = dir .. '/music.svg',
-  game = dir .. '/google-controller.svg',
-  lab = dir .. '/flask.svg',
-  --others
-  menu = dir .. '/menu.svg',
-  close = dir .. '/close.svg',
-  logout = dir .. '/logout.svg',
-  sleep = dir .. '/power-sleep.svg',
-  power = dir .. '/power.svg',
-  lock = dir .. '/lock.svg',
-  restart = dir .. '/restart.svg',
-  search = dir .. '/magnify.svg',
-  volume = dir .. '/volume-high.svg',
-  brightness = dir .. '/brightness-7.svg',
-  chart = dir .. '/chart-areaspline.svg',
-  memory = dir .. '/memory.svg',
-  harddisk = dir .. '/harddisk.svg',
-  thermometer = dir .. '/thermometer.svg',
-  plus = dir .. '/plus.svg'
-}
+local final_theme = {}
+gtable.crush(final_theme, default_theme.theme)
+gtable.crush(final_theme, theme.theme)
+default_theme.awesome_overrides(final_theme)
+theme.awesome_overrides(final_theme)
+
+return final_theme
